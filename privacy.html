@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — klk</title>
+    <meta
+      name="description"
+      content="What klk collects, why, who can see it, and what we can and cannot see ourselves."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="wrap">
+        <a class="wordmark" href="./">klk</a>
+        <nav>
+          <a href="./">Home</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc">
+      <div class="wrap narrow">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated 19 July 2026</p>
+
+        <p>
+          klk is a private, invite-only app for sharing photos and video inside small
+          groups, which the app calls <strong>klks</strong>. This policy describes what
+          the app collects, why, who can see it, and — just as importantly — what we can
+          still see ourselves.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>The honest version, up front.</strong> Everything you post is visible
+            only to the members of the klk you posted it to. That is enforced by server-side
+            security rules, not by convention. It is <em>not</em> end-to-end encrypted
+            today, which means klk's operator has the technical ability to access content
+            stored on its servers. So the accurate claim right now is "only your klk can
+            see it" — not "not even we can see it." End-to-end encryption is planned; until
+            it ships, this paragraph stands.
+          </p>
+        </div>
+
+        <h2>What we collect</h2>
+
+        <h3>Account information</h3>
+        <ul>
+          <li>
+            <strong>Email address and password.</strong> Used only to sign you in. Your
+            password is handled by Firebase Authentication and is never visible to us. Your
+            email is not shown to other users anywhere in the app and is not part of your
+            visible profile.
+          </li>
+          <li>
+            <strong>Display name and profile photo</strong>, if you set one. Visible to
+            people who share a klk with you.
+          </li>
+          <li>
+            <strong>A user id</strong> generated at sign-up, used to attach your content
+            and klk memberships to you.
+          </li>
+        </ul>
+
+        <h3>Content you share</h3>
+        <ul>
+          <li>
+            <strong>Photos and video</strong> you post as Posts, Moments or Clips, together
+            with captions, comments, likes, and — for Moments — who has viewed them.
+          </li>
+          <li>
+            <strong>Which klks you belong to</strong>, who created each klk, its name and
+            its colour.
+          </li>
+          <li>
+            Media is uploaded as you selected it. We do not strip embedded metadata such as
+            EXIF location from photos, so assume that anything your camera recorded travels
+            with the photo to the other members of that klk.
+          </li>
+        </ul>
+
+        <h3>Device and diagnostic information</h3>
+        <ul>
+          <li>
+            <strong>A push notification token</strong> for each device you sign in on, so
+            klk can tell you about activity in your klks. It is readable only by you.
+          </li>
+          <li>
+            <strong>Crash and error reports</strong>, sent to Sentry when the app fails.
+            These include the error, technical details of the device and app version, and
+            your user id, email address and display name so a report can be tied back to an
+            affected account.
+          </li>
+        </ul>
+
+        <h3>What we do not collect</h3>
+        <ul>
+          <li>No advertising identifiers, and no advertising of any kind.</li>
+          <li>No behavioural analytics or usage tracking product is installed in the app.</li>
+          <li>No contacts, no address book access, no location permission.</li>
+          <li>No data is sold, rented, or shared with third parties for their own purposes.</li>
+        </ul>
+
+        <h2>Who can see what</h2>
+        <ul>
+          <li>
+            <strong>Other members of a klk</strong> can see everything posted to that klk,
+            and can see your display name and profile photo.
+          </li>
+          <li>
+            <strong>People you share no klk with</strong> cannot see your content and
+            cannot see your profile at all — they cannot search for you, mention you, or
+            find that your account exists.
+          </li>
+          <li>
+            <strong>The public</strong> sees nothing. klk has no public profiles, no
+            explore feed, and no web-visible content.
+          </li>
+          <li>
+            <strong>We</strong> can technically access content stored on the servers, as
+            described above. We access it only where necessary to operate the service, to
+            investigate a specific abuse or safety report, or where legally required.
+          </li>
+        </ul>
+
+        <h2>How invites work</h2>
+        <p>
+          Joining a klk is only possible through an invite link created by a member. Each
+          link is a single-use, unguessable, expiring token, and it is redeemed on the
+          server — the app cannot add anyone to a klk on its own. Anyone who created
+          invites can revoke every unused link at once. There is no directory to browse and
+          no way to request access to a klk you were not invited to.
+        </p>
+
+        <h2>Service providers</h2>
+        <p>We use a small number of processors, and only for the purposes listed:</p>
+        <ul>
+          <li>
+            <strong>Google Firebase</strong> (Authentication, Firestore, Cloud Storage,
+            Cloud Functions) — hosts accounts, content and media. Data is stored on Google
+            Cloud infrastructure in the United States.
+          </li>
+          <li>
+            <strong>Expo</strong> — delivers push notifications to your device.
+          </li>
+          <li>
+            <strong>Sentry</strong> — receives crash and error reports.
+          </li>
+        </ul>
+
+        <h2>Retention and deletion</h2>
+        <p>
+          Content stays until it is deleted. You can delete your own posts, moments, clips
+          and comments at any time, and deleting one removes its media from storage. Leaving
+          a klk removes your access to it; content you already posted there remains visible
+          to that klk unless you delete it first.
+        </p>
+        <p>
+          To delete your account and everything attached to it, email
+          <a href="mailto:tannermares@gmail.com">tannermares@gmail.com</a> from the address
+          on the account. We will delete your account, profile, push tokens and the content
+          you posted, and remove you from your klks. Backups may retain copies for up to 30
+          days before they age out.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+          klk is not directed at children under 13, and we do not knowingly create accounts
+          for them. Parents commonly share photos of their own children inside a family klk;
+          that content belongs to the adult who posted it and is governed by this policy. If
+          you believe a child under 13 has created an account, contact us and we will remove
+          it.
+        </p>
+
+        <h2>Your rights</h2>
+        <p>
+          Depending on where you live, you may have the right to access, correct, export or
+          delete your personal information, and to object to certain processing. Email
+          <a href="mailto:tannermares@gmail.com">tannermares@gmail.com</a> and we will
+          action it. We do not discriminate against anyone for exercising these rights.
+        </p>
+
+        <h2>Security</h2>
+        <p>
+          Content is transmitted over TLS and access is restricted by server-side security
+          rules that check klk membership on every read and write. No system is perfect; we
+          will notify affected users of a breach that puts their content at risk.
+        </p>
+
+        <h2>Changes</h2>
+        <p>
+          If this policy changes materially — in particular if what we collect changes, or
+          when end-to-end encryption ships and the callout at the top of this page no longer
+          applies — the date at the top will change and the app will tell you.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          <a href="mailto:tannermares@gmail.com">tannermares@gmail.com</a>
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <span>klk</span>
+        <nav>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="mailto:tannermares@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

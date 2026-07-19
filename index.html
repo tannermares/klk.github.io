@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>klk — a private place for the people actually in your life</title>
+    <meta
+      name="description"
+      content="klk is a private, invite-only photo and video app built around small groups. No strangers, no explore feed, no ads. Works on iPhone and Android."
+    />
+    <meta property="og:title" content="klk" />
+    <meta
+      property="og:description"
+      content="A private place to share photos and video with the people actually in your life."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- The shutter mark, defined once and referenced wherever it appears. It is a camera
+         aperture — the click / clique homophone the whole name rests on. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <!-- Trims the blades flush with the rim. Must be userSpaceOnUse: the blades
+             overshoot the rim, so an objectBoundingBox circle would resolve against the
+             overshooting bbox instead of the 1024 viewBox and clip the mark apart. -->
+        <clipPath id="shutter-rim" clipPathUnits="userSpaceOnUse">
+          <circle cx="512" cy="512" r="369" />
+        </clipPath>
+        <symbol id="shutter" viewBox="0 0 1024 1024">
+          <path
+            clip-path="url(#shutter-rim)"
+            fill-rule="nonzero"
+            d="M 143.00 512.00 A 369.00 369.00 0 1 1 881.00 512.00 A 369.00 369.00 0 1 1 143.00 512.00 Z M 177.00 512.00 A 335.00 335.00 0 1 0 847.00 512.00 A 335.00 335.00 0 1 0 177.00 512.00 Z M 520.50 347.28 L 900.24 566.52 L 883.24 595.96 L 503.50 376.72 Z M 658.90 437.00 L 658.90 875.48 L 624.90 875.48 L 624.90 437.00 Z M 650.40 601.72 L 270.67 820.96 L 253.67 791.52 L 633.40 572.28 Z M 503.50 676.72 L 123.76 457.48 L 140.76 428.04 L 520.50 647.28 Z M 365.10 587.00 L 365.10 148.52 L 399.10 148.52 L 399.10 587.00 Z M 373.60 422.28 L 753.33 203.04 L 770.33 232.48 L 390.60 451.72 Z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="site-head">
+      <div class="wrap">
+        <a class="wordmark" href="./">
+          <svg width="26" height="26" fill="var(--accent)" aria-hidden="true">
+            <use href="#shutter" />
+          </svg>
+          klk
+        </a>
+        <nav>
+          <a href="#why">Why klk</a>
+          <a href="#belief">What it's for</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-copy">
+            <h1>Share your life with the people actually in it.</h1>
+            <p class="lede">
+              klk is a private, invite-only place for photos and video. You make a klk —
+              your family, your closest friends, the people you took the trip with — and
+              everything you share stays inside it.
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="#why">See how it works</a>
+              <span class="cta-note">iPhone and Android.</span>
+            </div>
+          </div>
+
+          <!-- Stylized renderings of the app, not screenshots: they stay accurate through
+               small UI changes, and they let the klk-hue rule read at a glance. -->
+          <div class="phones" aria-label="Illustration of the klk app">
+            <div class="phone behind">
+              <div class="screen">
+                <div class="title">klks</div>
+                <p class="hub-intro">
+                  Toggle which klks show in your feed. Tap a klk to see its members and
+                  invite people.
+                </p>
+                <div class="klk-row">
+                  <span class="bar" style="background: var(--clay)"></span>
+                  <div>
+                    <div class="name">Family</div>
+                    <div class="members">6 members · you created this</div>
+                  </div>
+                  <span class="state" style="color: var(--clay)">In feed</span>
+                </div>
+                <div class="klk-row">
+                  <span class="bar" style="background: var(--indigo)"></span>
+                  <div>
+                    <div class="name">Cabin trip</div>
+                    <div class="members">4 members</div>
+                  </div>
+                  <span class="state" style="color: var(--indigo)">In feed</span>
+                </div>
+                <div class="klk-row">
+                  <span class="bar"></span>
+                  <div>
+                    <div class="name">Book club</div>
+                    <div class="members">9 members</div>
+                  </div>
+                  <span class="state muted">Hidden</span>
+                </div>
+                <div class="tabbar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 3 3 10.2V21h6v-6h6v6h6V10.2z"
+                    />
+                  </svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 5h16v14H4z M10 9l5 3-5 3z" fill-rule="evenodd" />
+                  </svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="6" />
+                    <path d="M15.5 15.5 20 20" stroke-linecap="round" />
+                  </svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="phone">
+              <div class="screen">
+                <div class="title">klk</div>
+                <div class="moment-bar">
+                  <div class="moment">
+                    <div class="ring" style="border-color: var(--clay)">
+                      <div class="disc">R</div>
+                    </div>
+                    <div class="cap">Moments</div>
+                  </div>
+                  <div class="moment">
+                    <div class="ring" style="border-color: var(--indigo)">
+                      <div class="disc">M</div>
+                    </div>
+                    <div class="cap">Mom</div>
+                  </div>
+                  <div class="moment">
+                    <div class="ring">
+                      <div class="disc">J</div>
+                    </div>
+                    <div class="cap">Jess</div>
+                  </div>
+                  <div class="moment">
+                    <div class="ring">
+                      <div class="disc">D</div>
+                    </div>
+                    <div class="cap">Dad</div>
+                  </div>
+                </div>
+
+                <div class="post-head">
+                  <div class="avatar">M</div>
+                  <div class="who">Mom</div>
+                  <div class="attr">
+                    <div class="klk" style="color: var(--clay)">Family</div>
+                    <div class="when">2h</div>
+                  </div>
+                </div>
+                <div class="photo"></div>
+                <div class="post-body">
+                  <div class="icons">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="var(--accent)">
+                      <path
+                        d="M12 21s-8-5.2-8-10.4A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 3.6C20 15.8 12 21 12 21z"
+                      />
+                    </svg>
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <path d="M4 5h16v11H9l-5 4z" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div class="likes">5 likes</div>
+                  <div class="caption-line">
+                    <b>Mom</b> First morning at the lake
+                  </div>
+                  <div class="comment-line">View all 4 comments</div>
+                </div>
+
+                <div class="tabbar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="on">
+                    <path d="M12 3 3 10.2V21h6v-6h6v6h6V10.2z" />
+                  </svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 5h16v14H4z M10 9l5 3-5 3z" fill-rule="evenodd" />
+                  </svg>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="11" cy="11" r="6" />
+                    <path d="M15.5 15.5 20 20" stroke-linecap="round" />
+                  </svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The practical half: why someone actually switches. -->
+      <section id="why" class="rule-top">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>You already do this. It just goes badly.</h2>
+            <p>
+              Sharing with a small group means a group text or a shared album today. Both
+              fall down in the same two places.
+            </p>
+          </div>
+          <div class="cols">
+            <div class="col">
+              <span class="hue-bar" style="background: var(--clay)"></span>
+              <h3>Group texts break at the divide</h3>
+              <p>
+                One person on Android and the photos arrive compressed, out of order, or
+                not at all. klk works the same on both phones, so nobody is the reason the
+                thread degrades.
+              </p>
+            </div>
+            <div class="col">
+              <span class="hue-bar" style="background: var(--indigo)"></span>
+              <h3>Shared albums can't hold a conversation</h3>
+              <p>
+                Apple-only, and liking and commenting are an afterthought buried behind a
+                tap. In klk the reactions and the comments are the point — that's the part
+                that makes it feel like people are there.
+              </p>
+            </div>
+            <div class="col">
+              <span class="hue-bar" style="background: var(--plum)"></span>
+              <h3>A klk per group, or per occasion</h3>
+              <p>
+                Standing groups like family, and one-off ones like a vacation or a wedding
+                weekend. Make one, invite people with a link, and toggle which klks show in
+                your feed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The philosophical half: the emotional close. -->
+      <section id="belief" class="manifesto">
+        <div class="wrap">
+          <h2>An answer to social media, not a smaller version of it.</h2>
+          <p>
+            There is no explore feed, no algorithm deciding what you see, no ads, and no
+            strangers. There is no follower count, because there is nobody to perform for.
+            Your feed is the people you invited, in the order they posted.
+          </p>
+          <p>
+            Most of what these apps cost us is not privacy — it is attention, and the
+            quiet habit of measuring your own life against other people's highlight reels.
+            klk is built so that doesn't have anywhere to happen. What's left is your
+            sister's kitchen, somebody's dog, the third day of a trip.
+          </p>
+          <p>
+            Privacy is what makes that credible rather than what makes it worth using.
+            Everything you post belongs to one klk and is visible only to its members, and
+            an invite is a single-use link — nobody finds their way in, and nothing is
+            public by accident.
+            <a href="privacy.html">Here is exactly what that means today.</a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Posts, Moments and Clips.</h2>
+            <p>Three ways to share, all of them klk-only.</p>
+          </div>
+          <div class="cols">
+            <div class="col">
+              <h3>Posts</h3>
+              <p>Photos and video that stay — one or many, with comments and likes.</p>
+            </div>
+            <div class="col">
+              <h3>Moments</h3>
+              <p>
+                The quick, in-passing ones. They don't expire, because your family
+                shouldn't lose something for not opening the app that day.
+              </p>
+            </div>
+            <div class="col">
+              <h3>Clips</h3>
+              <p>Short vertical video, swiped through — from your klks and nowhere else.</p>
+            </div>
+          </div>
+          <p class="muted" style="margin-top: 36px; font-size: 15px">
+            Photo export — pulling everything out of a klk in full resolution — is coming,
+            and will likely be the one paid thing.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <span>klk</span>
+        <nav>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="mailto:tannermares@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
