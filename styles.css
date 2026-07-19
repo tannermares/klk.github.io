@@ -739,7 +739,8 @@ section {
 
 .site-foot nav {
   display: flex;
-  gap: 22px;
+  flex-wrap: wrap;
+  gap: 10px 22px;
 }
 
 .site-foot .copyright {
