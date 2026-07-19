@@ -658,6 +658,60 @@ section {
   margin-bottom: 0;
 }
 
+/* ── Support FAQ ────────────────────────────────────────────────────── */
+
+.faq {
+  border-top: 1px solid var(--rule);
+  margin-bottom: 1.4em;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--rule);
+}
+
+.faq summary {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 28px 16px 0;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+}
+
+/* Safari still paints the default disclosure triangle without this. */
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+/* The chevron is drawn from two borders on a rotated square, so it inherits
+   currentColor and needs no SVG or icon font. */
+.faq summary::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 22px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--ink-muted);
+  border-bottom: 2px solid var(--ink-muted);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(-135deg);
+  top: 25px;
+}
+
+.faq .answer {
+  padding: 0 0 16px;
+}
+
+.faq .answer p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── Footer ─────────────────────────────────────────────────────────── */
 
 .site-foot {
@@ -686,6 +740,11 @@ section {
 .site-foot nav {
   display: flex;
   gap: 22px;
+}
+
+.site-foot .copyright {
+  margin: 6px 0 0;
+  font-size: 13px;
 }
 
 /* ── Responsive ─────────────────────────────────────────────────────── */

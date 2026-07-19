@@ -5,9 +5,15 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 ## What this is
 
 The public web presence for **klk**, a private, invite-only photo and video app built
-around small groups called *klks*. Three pages: a landing page, a privacy policy, and
-terms of service. The app source lives in a sibling repo (`../klk`) — this repo contains
-no app code and never should.
+around small groups called *klks*. Four pages: a landing page, a privacy policy, terms
+of service, and a support page (the App Store support URL). The app source lives in a
+sibling repo (`../klk`) — this repo contains no app code and never should.
+
+The `assets/` directory holds the Open Graph card (`og-image.png`, 2400×1260) that every
+page links for link unfurls. It is regenerated from `assets/og-template.html`, a
+standalone page rendered at 1200×630 and screenshotted — that file duplicates the design
+tokens on purpose so it renders identically anywhere; keep it in sync with `styles.css`
+by hand. Its header comment has the steps.
 
 ## Stack
 
