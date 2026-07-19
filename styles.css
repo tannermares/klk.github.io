@@ -334,17 +334,20 @@ section {
   box-shadow: 0 8px 24px rgba(25, 22, 18, 0.14);
 }
 
+/* Both phones stay the same size — scaling one down read as an inconsistency rather than
+   as depth. The pair is staggered vertically instead, which the flex-end alignment on the
+   container turns into an offset without touching either frame's dimensions. */
 .phone.behind {
-  transform: scale(0.9) translateY(6px);
-  transform-origin: bottom left;
-  opacity: 0.96;
+  margin-bottom: 26px;
 }
 
 .screen {
   border-radius: 30px;
   overflow: hidden;
   background: var(--paper);
-  height: 560px;
+  /* Tall enough for the feed screen's full contents — moment bar, a whole post, and the
+     tab bar — to sit inside the frame rather than overflowing past its bottom edge. */
+  height: 580px;
   display: flex;
   flex-direction: column;
   font-size: 12px;
@@ -448,15 +451,60 @@ section {
 }
 
 /* The app posts at the photo's own ratio; the mockup pins it square so the whole post —
-   icons, likes, caption — still fits inside the frame. */
+   icons, likes, caption — still fits inside the frame.
+
+   The "photo" is a CSS-drawn scene rather than a real image: it keeps the repo
+   dependency-free, it can't go stale against the app, and an illustrated lake sits
+   honestly next to illustrated chrome where a stock photo would read as a real capture
+   and make the rest look fake by comparison. Layers paint back to front — sky, sun,
+   far ridge, near ridge, water, glare. */
 .photo {
   aspect-ratio: 1 / 1;
   flex: none;
-  background: linear-gradient(150deg, #d8cdb9 0%, #bfae95 45%, #8d7f6c 100%);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#f6e2c8 0%, #f0cfae 42%, #e8bfa0 58%);
 }
 
-.photo.b {
-  background: linear-gradient(150deg, #c9d3cb 0%, #9db3a5 50%, #6c8377 100%);
+.photo::before {
+  /* Sun, low and hazy. */
+  content: '';
+  position: absolute;
+  top: 24%;
+  left: 34%;
+  width: 21%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: radial-gradient(circle, #fff4dd 38%, rgba(255, 231, 194, 0) 72%);
+}
+
+.photo::after {
+  /* Water — the bottom 42%, with the sun's glare smeared down it. */
+  content: '';
+  position: absolute;
+  inset: 58% 0 0;
+  background:
+    radial-gradient(58% 88% at 44% 0%, rgba(255, 243, 219, 0.7), transparent 68%),
+    linear-gradient(#c2a98d 0%, #8d8b7e 42%, #5d6963 100%);
+}
+
+/* Two ridges, and the far one is deliberately much paler — aerial perspective is the
+   only thing separating them into distinct hills rather than one dark mass. */
+.photo .ridge {
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  bottom: 42%;
+  height: 26%;
+  background: #b09a84;
+  clip-path: polygon(0 100%, 0 46%, 17% 22%, 31% 44%, 46% 14%, 63% 42%, 78% 26%, 100% 52%, 100% 100%);
+}
+
+.photo .ridge.near {
+  bottom: 42%;
+  height: 17%;
+  background: #5c4c40;
+  clip-path: polygon(0 100%, 0 62%, 22% 30%, 38% 58%, 57% 26%, 74% 54%, 100% 34%, 100% 100%);
 }
 
 .post-body {
@@ -533,6 +581,7 @@ section {
 
 .klk-row .state {
   margin-left: auto;
+  white-space: nowrap;
   font-size: 10px;
   letter-spacing: 0.07em;
   font-weight: 600;
