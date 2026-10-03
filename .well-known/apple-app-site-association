@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["GJLK38FM36.com.tannermares.klk"],
+        "components": [
+          {
+            "/": "/join*",
+            "comment": "Invite links. The invite itself is in the fragment and never reaches this server."
+          }
+        ]
+      }
+    ]
+  }
+}

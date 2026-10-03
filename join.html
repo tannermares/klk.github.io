@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The invite (token and key) lives only in this page's URL fragment, which
+         browsers never send to a server. Belt and braces: no referrer either. -->
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <title>You’re invited — klk</title>
+    <meta
+      name="description"
+      content="You’ve been invited to a klk — a small, private group for sharing photos and video with people you actually know."
+    />
+    <meta name="theme-color" content="#4f7d66" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="klk" />
+    <meta property="og:title" content="You’re invited to a klk" />
+    <meta
+      property="og:description"
+      content="A small, private group for sharing photos and video with people you actually know."
+    />
+    <meta property="og:url" content="https://klkapp.com/join" />
+    <meta property="og:image" content="https://klkapp.com/assets/og-image.png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta
+      property="og:image:alt"
+      content="klk — a private, invite-only place for photos and video, shown with a list of klks: Family, Cabin trip, Book club."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="You’re invited to a klk" />
+    <meta
+      name="twitter:description"
+      content="A small, private group for sharing photos and video with people you actually know."
+    />
+    <meta name="twitter:image" content="https://klkapp.com/assets/og-image.png" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <!-- The share sheet and Messages take a link's icon from here. -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="wrap">
+        <a class="wordmark" href="./">klk</a>
+        <nav>
+          <a href="./">Home</a>
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc">
+      <div class="wrap narrow">
+        <h1>You’re invited to a klk</h1>
+
+        <div id="invite" hidden>
+          <p>
+            Someone invited you to their klk — a small, private group for sharing photos
+            and video with people you actually know.
+          </p>
+          <div class="cta-row">
+            <a class="btn" id="open" href="#">Open in klk</a>
+            <a class="btn outline" href="https://apps.apple.com/app/id6790554858">Get klk</a>
+          </div>
+
+          <h2>Or paste the code</h2>
+          <p>Open klk, tap <strong>Join with an invite</strong>, and paste this:</p>
+          <div class="invite-code">
+            <code id="code"></code>
+            <button class="btn outline" id="copy" type="button">Copy</button>
+          </div>
+          <p class="muted">
+            An invite works once and expires after a week. If it says it has been used
+            or has expired, ask for a fresh one.
+          </p>
+        </div>
+
+        <div id="missing" hidden>
+          <p>
+            This link is missing its invite. Ask whoever invited you to send it again —
+            and if it came through an app that shortens or rewrites links, try sending it
+            as a code instead.
+          </p>
+        </div>
+
+        <noscript>
+          <p>
+            Open this link on your phone with klk installed, or ask whoever invited you
+            for the invite code to paste into klk.
+          </p>
+        </noscript>
+      </div>
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <div>
+          <span>klk</span>
+          <p class="copyright">© 2026 Tanner Mares</p>
+        </div>
+        <nav>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="support.html">Support</a>
+          <a href="mailto:support@klkapp.com">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // With klk installed, iOS and Android open the app straight from the link and
+      // this page never loads. It loads when klk isn't installed, or the link was
+      // opened in a browser.
+      //
+      // The invite is <token>.<key> in the fragment. Read it once, then take it out
+      // of the address bar so it doesn't linger in history, bookmarks or a
+      // screenshot. It never leaves this page except into klk itself.
+      ;(function () {
+        var raw = location.hash.slice(1)
+        try {
+          raw = decodeURIComponent(raw)
+        } catch (e) {}
+        var match = raw.match(/^([A-Za-z0-9_-]+)\.([A-Za-z0-9+/=]+)$/)
+        if (location.hash) history.replaceState(null, '', location.pathname)
+
+        if (!match) {
+          document.getElementById('missing').hidden = false
+          return
+        }
+
+        var code = match[1] + '.' + match[2]
+        document.getElementById('invite').hidden = false
+        document.getElementById('open').href = 'klk://join/' + match[1] + '#' + match[2]
+        document.getElementById('code').textContent = code
+
+        var copy = document.getElementById('copy')
+        copy.addEventListener('click', function () {
+          if (!navigator.clipboard) return
+          navigator.clipboard.writeText(code).then(function () {
+            copy.textContent = 'Copied'
+          })
+        })
+      })()
+    </script>
+  </body>
+</html>

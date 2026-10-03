@@ -658,6 +658,36 @@ section {
   margin-bottom: 0;
 }
 
+/* ── Invite page ────────────────────────────────────────────────────── */
+
+/* The code is long and unbroken (two base64 strings), so it wraps anywhere rather
+   than overflowing the column on a phone. */
+.invite-code {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border-radius: 11px;
+  padding: 14px 16px;
+  margin: 0 0 1.4em;
+}
+
+.invite-code code {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.5;
+  user-select: all;
+}
+
+button.btn {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* ── Support FAQ ────────────────────────────────────────────────────── */
 
 .faq {
