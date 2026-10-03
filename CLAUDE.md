@@ -54,14 +54,17 @@ frame, for instance).
 
 These are the actual App Store submission blocker, so accuracy matters more than polish.
 
-- **Never describe klk as end-to-end encrypted.** It is not, today. Content is protected by
-  server-side security rules, which means the operator retains technical access. The
-  honest claim is "only your klk can see it," not "not even we can see it," and the callout
-  at the top of the privacy policy says so on purpose. When E2E ships, that callout is the
-  first thing to change.
+- **Name what is end-to-end encrypted; never say "everything."** Photos, videos,
+  thumbnails, captions and comments are end-to-end encrypted, so "not even we can see it"
+  is true of *those*. Names, profile photos, klk names and colours, membership, and who
+  posted, liked, viewed or commented when are still visible to the server — the "What we
+  can still see" section of the privacy policy is the canonical list, and every other page
+  links to it rather than restating it differently. If the app starts or stops encrypting
+  something, that list changes first.
 - Before claiming what the app does or does not collect, **verify it against the app repo**
   rather than assuming. The current text reflects Firebase Auth, Firestore, Cloud Storage,
-  Expo push, and Sentry crash reports (which carry uid, email and display name).
+  Expo push (content-free), and Sentry crash reports (which carry uid, email and display
+  name, and no decrypted content).
 - Bump the `Last updated` date whenever the substance changes.
 
 ## Conventions

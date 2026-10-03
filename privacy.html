@@ -55,7 +55,7 @@
     <main class="doc">
       <div class="wrap narrow">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated July 19, 2026</p>
+        <p class="updated">Last updated October 3, 2026</p>
 
         <p>
           klk is a private, invite-only app for sharing photos and video inside small
@@ -66,13 +66,17 @@
 
         <div class="callout">
           <p>
-            <strong>The honest version, up front.</strong> Everything you post is visible
-            only to the members of the klk you posted it to. That is enforced by server-side
-            security rules, not by convention. It is <em>not</em> end-to-end encrypted
-            today, which means klk's operator has the technical ability to access content
-            stored on its servers. So the accurate claim right now is "only your klk can
-            see it" — not "not even we can see it." End-to-end encryption is planned; until
-            it ships, this paragraph stands.
+            <strong>The honest version, up front.</strong> Your photos, videos, captions
+            and comments are <em>end-to-end encrypted</em>. They are locked on your phone
+            before they leave it, and only the devices of the people in that klk hold the
+            keys to open them. Our servers store them, but cannot read them — not even we
+            can see them.
+          </p>
+          <p>
+            That covers what you post, not everything about it. To run the service our
+            servers still see who you are, which klks you are in, and who posted, liked,
+            viewed or commented on what, and when. The full list is
+            <a href="#what-we-can-see">below</a>.
           </p>
         </div>
 
@@ -99,17 +103,23 @@
         <h3>Content you share</h3>
         <ul>
           <li>
-            <strong>Photos and video</strong> you post as Posts, Moments or Clips, together
-            with captions, comments, likes, and — for Moments — who has viewed them.
+            <strong>Photos and video</strong> you post as Posts, Moments or Clips, with their
+            <strong>captions</strong> and the <strong>comments</strong> on them. All of these
+            are end-to-end encrypted: we store them, but only the klk can open them.
+          </li>
+          <li>
+            <strong>Likes, views and activity</strong> — who liked or viewed what, who
+            commented and when, and who was mentioned. These are not encrypted.
           </li>
           <li>
             <strong>Which klks you belong to</strong>, who created each klk, its name and
-            its colour.
+            its colour. These are not encrypted.
           </li>
           <li>
             Media is uploaded as you selected it. We do not strip embedded metadata such as
-            EXIF location from photos, so assume that anything your camera recorded travels
-            with the photo to the other members of that klk.
+            EXIF location from photos. It is encrypted along with the photo, so we cannot see
+            it — but assume that anything your camera recorded travels with the photo to the
+            other members of that klk.
           </li>
         </ul>
 
@@ -123,7 +133,7 @@
             <strong>Crash and error reports</strong>, sent to Sentry when the app fails.
             These include the error, technical details of the device and app version, and
             your user id, email address and display name so a report can be tied back to an
-            affected account.
+            affected account. They never include your photos, videos, captions or comments.
           </li>
         </ul>
 
@@ -134,6 +144,43 @@
           <li>No contacts, no address book access, no location permission.</li>
           <li>No data is sold, rented, or shared with third parties for their own purposes.</li>
         </ul>
+
+        <h2>How encryption works</h2>
+        <p>
+          Each klk has its own key. It is shared only with the devices of the klk's members,
+          and an invite link carries it to the person being invited in the part of the
+          address that is never sent to a server. Everything you post to a klk is encrypted
+          with that key on your phone before it is uploaded, and decrypted on the phone of
+          whoever opens it. When someone leaves or is removed from a klk, the klk gets a new
+          key, so they cannot open anything posted after they left. What they could already
+          see before then stays readable to them.
+        </p>
+        <p>
+          When you set up klk, you choose a <strong>recovery passphrase</strong>. It locks a
+          copy of your keys that we store, so you can sign in on a new phone and still open
+          your klks. We never see the passphrase, and we cannot reset it. Because that locked
+          copy is only as strong as the passphrase, choose one nobody could guess.
+        </p>
+
+        <h2 id="what-we-can-see">What we can still see</h2>
+        <p>
+          End-to-end encryption hides what you share, not the fact that you share it. Our
+          servers can see:
+        </p>
+        <ul>
+          <li>Your email address, display name and profile photo.</li>
+          <li>The names and colours of your klks, and who is in each one.</li>
+          <li>
+            When something was posted, by whom, and to which klk; whether it is a photo or a
+            video, and its size and layout.
+          </li>
+          <li>Who liked, viewed or commented on it, when, and who was mentioned.</li>
+          <li>Your push notification tokens, and crash reports as described above.</li>
+        </ul>
+        <p>
+          Push notifications say who did something, never what they said or shared — the
+          server has nothing readable to put in them.
+        </p>
 
         <h2>Who can see what</h2>
         <ul>
@@ -151,9 +198,12 @@
             explore feed, and no web-visible content.
           </li>
           <li>
-            <strong>We</strong> can technically access content stored on the servers, as
-            described above. We access it only where necessary to operate the service, to
-            investigate a specific abuse or safety report, or where legally required.
+            <strong>We</strong> cannot see your photos, videos, captions or comments. We
+            can see the information listed under
+            <a href="#what-we-can-see">What we can still see</a>, and access it only where
+            necessary to operate the service, to investigate a specific abuse or safety
+            report, or where legally required. If we are legally compelled to hand over
+            data, encrypted content is all we would have to give.
           </li>
         </ul>
 
@@ -163,7 +213,9 @@
           link is a single-use, unguessable, expiring token, and it is redeemed on the
           server — the app cannot add anyone to a klk on its own. Anyone who created
           invites can revoke every unused link at once. There is no directory to browse and
-          no way to request access to a klk you were not invited to.
+          no way to request access to a klk you were not invited to. Because an unused link
+          also carries the klk's key, treat it like a key: send it only to the person it is
+          for.
         </p>
 
         <h2>Service providers</h2>
@@ -171,11 +223,12 @@
         <ul>
           <li>
             <strong>Google Firebase</strong> (Authentication, Firestore, Cloud Storage,
-            Cloud Functions) — hosts accounts, content and media. Data is stored on Google
-            Cloud infrastructure in the United States.
+            Cloud Functions) — hosts accounts, encrypted content and encrypted media. Data
+            is stored on Google Cloud infrastructure in the United States.
           </li>
           <li>
-            <strong>Expo</strong> — delivers push notifications to your device.
+            <strong>Expo</strong> — delivers push notifications to your device. They carry
+            no content.
           </li>
           <li>
             <strong>Sentry</strong> — receives crash and error reports.
@@ -185,9 +238,10 @@
         <h2>Retention and deletion</h2>
         <p>
           Content stays until it is deleted. You can delete your own posts, moments, clips
-          and comments at any time, and deleting one removes its media from storage. Leaving
-          a klk removes your access to it; content you already posted there remains visible
-          to that klk unless you delete it first.
+          and comments at any time, and deleting one removes its media from storage.
+          Deleting a klk deletes everything posted to it. Leaving a klk removes your access
+          to it; content you already posted there remains visible to that klk unless you
+          delete it first.
         </p>
         <p>
           To delete your account and everything attached to it, email
@@ -212,20 +266,25 @@
           delete your personal information, and to object to certain processing. Email
           <a href="mailto:privacy@klkapp.com">privacy@klkapp.com</a> and we will
           action it. We do not discriminate against anyone for exercising these rights.
+          Because your content is end-to-end encrypted, we hold it only in a form we cannot
+          read, so the information we can export or correct is what is listed under
+          <a href="#what-we-can-see">What we can still see</a>.
         </p>
 
         <h2>Security</h2>
         <p>
-          Content is transmitted over TLS and access is restricted by server-side security
-          rules that check klk membership on every read and write. No system is perfect; we
-          will notify affected users of a breach that puts their content at risk.
+          Photos, videos, captions and comments are end-to-end encrypted with widely used,
+          openly reviewed algorithms (XChaCha20-Poly1305 and X25519), so a
+          breach of our servers would expose encrypted content, not what you shared.
+          Everything is also transmitted over TLS, and server-side security rules check klk
+          membership on every read and write. No system is perfect; we will notify affected
+          users of a breach that puts their information at risk.
         </p>
 
         <h2>Changes</h2>
         <p>
-          If this policy changes materially — in particular if what we collect changes, or
-          when end-to-end encryption ships and the callout at the top of this page no longer
-          applies — the date at the top will change and the app will tell you.
+          If this policy changes materially — in particular if what we collect, or what we
+          can see, changes — the date at the top will change and the app will tell you.
         </p>
 
         <h2>Contact</h2>
