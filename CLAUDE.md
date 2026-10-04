@@ -5,8 +5,10 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 ## What this is
 
 The public web presence for **klk**, a private, invite-only photo and video app built
-around small groups called *klks*. Four pages: a landing page, a privacy policy, terms
-of service, and a support page (the App Store support URL). The app source lives in a
+around small groups called *klks*. Pages: a landing page, a privacy policy, terms of
+service, a support page (the App Store support URL), an invite page (`join.html`), and
+`delete-account.html` — the account-deletion URL filed with Google Play, which checks it
+live, so it must never move or 404. The app source lives in a
 sibling repo (`../klk`) — this repo contains no app code and never should.
 
 The `assets/` directory holds the Open Graph card (`og-image.png`, 2400×1260) that every

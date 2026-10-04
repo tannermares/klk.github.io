@@ -637,7 +637,8 @@ section {
   line-height: 1.6;
 }
 
-.doc ul {
+.doc ul,
+.doc ol {
   padding-left: 22px;
   margin: 0 0 1.1em;
 }
