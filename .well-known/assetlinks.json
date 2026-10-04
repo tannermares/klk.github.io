@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tannermares.klk",
+      "sha256_cert_fingerprints": [
+        "F6:8C:54:41:F1:8A:BB:57:B4:12:53:9D:F3:65:93:87:06:9C:C0:87:54:E0:DF:C3:92:CC:40:65:BD:CC:39:DE"
+      ]
+    }
+  }
+]
