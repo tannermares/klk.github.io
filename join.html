@@ -69,7 +69,7 @@
           </p>
           <div class="cta-row">
             <a class="btn" id="open" href="#">Open in klk</a>
-            <a class="btn outline" href="https://apps.apple.com/app/id6790554858">Get klk</a>
+            <a class="btn outline" id="get" href="https://apps.apple.com/app/id6790554858">Get klk</a>
           </div>
 
           <h2>Or paste the code</h2>
@@ -141,6 +141,13 @@
         document.getElementById('invite').hidden = false
         document.getElementById('open').href = 'klk://join/' + match[1] + '#' + match[2]
         document.getElementById('code').textContent = code
+
+        // Default is the App Store; Android goes to Play. Anything else (a desktop
+        // browser) keeps the App Store link, since it can't install either.
+        if (/Android/i.test(navigator.userAgent)) {
+          document.getElementById('get').href =
+            'https://play.google.com/store/apps/details?id=com.tannermares.klk'
+        }
 
         var copy = document.getElementById('copy')
         copy.addEventListener('click', function () {
