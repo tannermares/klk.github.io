@@ -316,6 +316,81 @@ section {
   margin-bottom: 0;
 }
 
+/* ── Request access ─────────────────────────────────────────────────── */
+
+.access-form {
+  max-width: 520px;
+}
+
+.access-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.access-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.access-row input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 13px 16px;
+  border-radius: 11px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px; /* 16px or more, or iOS Safari zooms the page on focus */
+}
+
+.access-row input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.access-form .hint {
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin: 10px 0 0;
+}
+
+/* Kept in the layout for bots but out of sight and out of the tab order. Not
+   display:none — some bots skip fields that are. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* An error is ink, not red: color only ever means "which klk." */
+.form-status {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin: 12px 0 0;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.error {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Once sent, the line replaces the whole form, so it reads at body size. */
+.form-status.done {
+  color: var(--ink);
+  font-size: 17px;
+  margin: 0;
+}
+
 /* ── Phone mockups ──────────────────────────────────────────────────── */
 
 .phones {

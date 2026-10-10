@@ -21,7 +21,8 @@ by hand. Its header comment has the steps.
 
 Hand-written static HTML and CSS. **No build step, no framework, no package manager, no
 dependencies.** The only external request on any page is the Google Fonts stylesheet for
-Fira Sans. Keep it that way: the whole value of this repo is that the privacy-policy URL
+Fira Sans — plus, on submit only, the landing page's request-access form, which posts to
+the app's `requestAccess` Cloud Function (`../klk/functions`). Keep it that way: the whole value of this repo is that the privacy-policy URL
 is stable, free, and cannot break.
 
 Preview with `python3 -m http.server 8765`. Deploys are just a push to `main` —

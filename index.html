@@ -89,7 +89,8 @@
               everything you share stays inside it.
             </p>
             <div class="cta-row">
-              <a class="btn" href="#why">See how it works</a>
+              <a class="btn" href="#access">Request access</a>
+              <a class="btn outline" href="#why">See how it works</a>
               <span class="cta-note">iPhone and Android.</span>
             </div>
           </div>
@@ -341,6 +342,50 @@
           </p>
         </div>
       </section>
+
+      <section id="access" class="rule-top">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Request access.</h2>
+            <p>
+              klk is in a small private beta. Leave your email and we'll send an invite
+              when there's room.
+            </p>
+          </div>
+          <!-- Requests go to the app's requestAccess Cloud Function, the one request on
+               this site that isn't fonts. Without JS the form falls back to an email. -->
+          <form
+            class="access-form"
+            id="access-form"
+            action="mailto:support@klkapp.com?subject=klk%20beta%20request"
+            method="post"
+            enctype="text/plain"
+          >
+            <label for="access-email">Email</label>
+            <div class="access-row">
+              <input
+                id="access-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="you@example.com"
+              />
+              <button class="btn" type="submit">Request access</button>
+            </div>
+            <p class="hint">
+              Use the email on your Apple ID or Google account — it's where the invite
+              goes.
+            </p>
+            <!-- A honeypot: hidden from people, so only a bot fills it in. -->
+            <div class="honeypot" aria-hidden="true">
+              <label for="access-website">Website</label>
+              <input id="access-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <p class="form-status" id="access-status" role="status"></p>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="site-foot">
@@ -358,5 +403,41 @@
         </nav>
       </div>
     </footer>
+
+    <script>
+      const ACCESS_URL = 'https://us-central1-klik-ac115.cloudfunctions.net/requestAccess'
+      const form = document.getElementById('access-form')
+      const status = document.getElementById('access-status')
+
+      form.addEventListener('submit', async event => {
+        event.preventDefault()
+        const button = form.querySelector('button')
+        button.disabled = true
+        status.className = 'form-status'
+        status.textContent = 'Sending…'
+        let message = 'Something went wrong. Try again, or email support@klkapp.com.'
+        try {
+          // A Firebase callable speaks plain JSON: { data } in, { result } or { error } out.
+          const res = await fetch(ACCESS_URL, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              data: { email: form.email.value, website: form.website.value },
+            }),
+          })
+          const body = await res.json()
+          // Only a validation error carries a message written for people.
+          if (body.error?.status === 'INVALID_ARGUMENT') message = body.error.message
+          if (!res.ok || body.error) throw new Error(message)
+          form.replaceChildren(status)
+          status.className = 'form-status done'
+          status.textContent = "Thanks — we'll be in touch."
+        } catch {
+          status.className = 'form-status error'
+          status.textContent = message
+          button.disabled = false
+        }
+      })
+    </script>
   </body>
 </html>
