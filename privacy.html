@@ -55,7 +55,7 @@
     <main class="doc">
       <div class="wrap narrow">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated October 16, 2026</p>
+        <p class="updated">Last updated October 17, 2026</p>
 
         <p>
           klk is a private, invite-only app for sharing photos and video inside small
@@ -70,7 +70,8 @@
             and comments are <em>end-to-end encrypted</em>. They are locked on your phone
             before they leave it, and only the devices of the people in that klk hold the
             keys to open them. Our servers store them, but cannot read them — not even we
-            can see them.
+            can see them. Your profile photo is encrypted the same way, so only people who
+            share a klk with you can open it.
           </p>
           <p>
             That covers what you post, not everything about it. To run the service our
@@ -91,8 +92,14 @@
             visible profile.
           </li>
           <li>
-            <strong>Display name and profile photo</strong>, if you set one. Visible to
-            people who share a klk with you.
+            <strong>Display name.</strong> Visible to people who share a klk with you. It
+            is not encrypted, so invites and notifications can show who they are from.
+          </li>
+          <li>
+            <strong>Profile photo</strong>, if you set one. Your phone shrinks it, which
+            removes its embedded metadata (EXIF) including location, then encrypts it so
+            only people who share a klk with you can open it. We store it, but cannot see
+            it.
           </li>
           <li>
             <strong>A user id</strong> generated at sign-up, used to attach your content
@@ -181,7 +188,7 @@
           servers can see:
         </p>
         <ul>
-          <li>Your email address, display name and profile photo.</li>
+          <li>Your email address and display name.</li>
           <li>The names and colours of your klks, and who is in each one.</li>
           <li>
             When something was posted, by whom, and to which klk; whether it is a photo or a
@@ -253,8 +260,8 @@
         <ul>
           <li>
             <strong>Google Firebase</strong> (Authentication, Firestore, Cloud Functions,
-            Cloud Storage) — hosts accounts, profile photos and encrypted content. Data is
-            stored on Google Cloud infrastructure in the United States.
+            Cloud Storage) — hosts accounts and encrypted content, profile photos
+            included. Data is stored on Google Cloud infrastructure in the United States.
           </li>
           <li>
             <strong>Cloudflare</strong> (R2) — stores the encrypted files of the photos and
@@ -310,9 +317,9 @@
 
         <h2>Security</h2>
         <p>
-          Photos, videos, captions and comments are end-to-end encrypted with widely used,
-          openly reviewed algorithms (XChaCha20-Poly1305 and X25519), so a
-          breach of our servers would expose encrypted content, not what you shared.
+          Photos, videos, captions, comments and profile photos are end-to-end encrypted
+          with widely used, openly reviewed algorithms (XChaCha20-Poly1305 and X25519), so
+          a breach of our servers would expose encrypted content, not what you shared.
           Everything is also transmitted over TLS, and server-side security rules check klk
           membership on every read and write. No system is perfect; we will notify affected
           users of a breach that puts their information at risk.

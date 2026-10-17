@@ -58,15 +58,17 @@ frame, for instance).
 These are the actual App Store submission blocker, so accuracy matters more than polish.
 
 - **Name what is end-to-end encrypted; never say "everything."** Photos, videos,
-  thumbnails, captions and comments are end-to-end encrypted, so "not even we can see it"
-  is true of *those*. Names, profile photos, klk names and colours, membership, and who
-  posted, liked, viewed or commented when are still visible to the server — the "What we
+  thumbnails, captions, comments and profile photos are end-to-end encrypted, so "not even
+  we can see it" is true of *those*. Emails, display names, klk names and colours,
+  membership, and who posted, liked, viewed or commented when are still visible to the
+  server — the "What we
   can still see" section of the privacy policy is the canonical list, and every other page
   links to it rather than restating it differently. If the app starts or stops encrypting
   something, that list changes first.
 - Before claiming what the app does or does not collect, **verify it against the app repo**
-  rather than assuming. The current text reflects Firebase Auth, Firestore, Cloud Storage
-  (profile photos, and files from posts made before the move to R2), Cloudflare R2 (the
+  rather than assuming. The current text reflects Firebase Auth, Firestore (including
+  profile photos, encrypted inline on the profile), Cloud Storage (only encrypted files from
+  posts made before the move to R2), Cloudflare R2 (the
   encrypted photo and video files), Expo push (content-free), Sentry crash reports (which
   carry uid, email and display name, and no decrypted content), and on-device media
   preparation that strips photo EXIF and video metadata before encryption.
