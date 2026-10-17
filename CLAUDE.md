@@ -65,9 +65,11 @@ These are the actual App Store submission blocker, so accuracy matters more than
   links to it rather than restating it differently. If the app starts or stops encrypting
   something, that list changes first.
 - Before claiming what the app does or does not collect, **verify it against the app repo**
-  rather than assuming. The current text reflects Firebase Auth, Firestore, Cloud Storage,
-  Expo push (content-free), and Sentry crash reports (which carry uid, email and display
-  name, and no decrypted content).
+  rather than assuming. The current text reflects Firebase Auth, Firestore, Cloud Storage
+  (profile photos, and files from posts made before the move to R2), Cloudflare R2 (the
+  encrypted photo and video files), Expo push (content-free), Sentry crash reports (which
+  carry uid, email and display name, and no decrypted content), and on-device media
+  preparation that strips photo EXIF and video metadata before encryption.
 - Bump the `Last updated` date whenever the substance changes.
 
 ## Conventions

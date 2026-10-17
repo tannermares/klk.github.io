@@ -116,10 +116,13 @@
             its colour. These are not encrypted.
           </li>
           <li>
-            Media is uploaded as you selected it. We do not strip embedded metadata such as
-            EXIF location from photos. It is encrypted along with the photo, so we cannot see
-            it — but assume that anything your camera recorded travels with the photo to the
-            other members of that klk.
+            Before a photo or video is encrypted, the app reduces it to a sensible size on
+            your phone. Photos are re-encoded, which removes their embedded metadata (EXIF),
+            including location. Videos are re-encoded without metadata, unless they are
+            already small enough and carry no location, in which case they are uploaded as
+            recorded and may keep details such as when they were filmed. Either way, whatever
+            is left is encrypted along with the file, so we cannot see it; only the other
+            members of that klk can.
           </li>
         </ul>
 
@@ -249,9 +252,14 @@
         <p>We use a small number of processors, and only for the purposes listed:</p>
         <ul>
           <li>
-            <strong>Google Firebase</strong> (Authentication, Firestore, Cloud Storage,
-            Cloud Functions) — hosts accounts, encrypted content and encrypted media. Data
-            is stored on Google Cloud infrastructure in the United States.
+            <strong>Google Firebase</strong> (Authentication, Firestore, Cloud Functions,
+            Cloud Storage) — hosts accounts, profile photos and encrypted content. Data is
+            stored on Google Cloud infrastructure in the United States.
+          </li>
+          <li>
+            <strong>Cloudflare</strong> (R2) — stores the encrypted files of the photos and
+            videos you post. It receives them already encrypted and cannot open them. Data
+            is stored in North America.
           </li>
           <li>
             <strong>Expo</strong> — delivers push notifications to your device. They carry
