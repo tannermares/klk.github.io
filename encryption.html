@@ -89,85 +89,98 @@
         <p class="updated">Last updated October 17, 2026</p>
 
         <p class="lede">
-          The photos, videos, captions and comments you post to klk are locked on your
-          phone before they leave it, and only the phones of the people in that klk can
-          unlock them. This page explains how, in plain words first. Further down, the
-          same thing is spelled out in full for anyone who wants to check our work.
+          What you post is locked on your phone, and only your klk can unlock it. Not even
+          we can see it.
         </p>
 
         <h2>The short version</h2>
-        <ol class="short">
-          <li>
-            <strong>Locked before it leaves your phone.</strong> Photos, videos, captions,
-            comments and profile photos are encrypted on your phone. What travels over the
-            internet, and what we store, is scrambled.
-          </li>
-          <li>
-            <strong>Only your klk has the key.</strong> Each klk has its own key, and only
-            its members' phones hold it. We keep your posts, but we have no key to open
-            them.
-          </li>
-          <li>
-            <strong>Our servers only ever hold scrambled data.</strong> That goes for us,
-            for the companies whose computers we rent (Google and Cloudflare), and for
-            anyone who breaks into them. If we were ever ordered to hand over your photos,
-            scrambled data is all we would have to give.
-          </li>
-        </ol>
+        <div class="cards">
+          <div class="card">
+            <div class="card-art">
+              <div class="mini-phone small">
+                <div class="photo"><div class="ridge"></div><div class="ridge near"></div></div>
+                <span class="badge" style="color: var(--pine)">
+                  <svg width="16" height="16" aria-hidden="true"><use href="#i-lock" /></svg>
+                </span>
+              </div>
+            </div>
+            <div>
+              <h3>Locked on your phone</h3>
+              <p>Before anything is uploaded.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-art">
+              <div class="key-art">
+                <svg width="56" height="56" style="color: var(--pine)" aria-hidden="true"><use href="#i-key" /></svg>
+                <span class="faces">
+                  <span class="avatar">M</span><span class="avatar">D</span><span class="avatar">S</span>
+                </span>
+              </div>
+            </div>
+            <div>
+              <h3>Only your klk has the key</h3>
+              <p>Every klk has its own.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-art">
+              <div class="mini-server small">
+                <svg class="noise" viewBox="0 0 80 80" aria-hidden="true"><use href="#noise" /></svg>
+              </div>
+            </div>
+            <div>
+              <h3>Our servers see noise</h3>
+              <p>So do Google and Cloudflare.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="chips" aria-label="What is locked">
+          <span class="chips-label">Locked</span>
+          <span class="chip">Photos</span>
+          <span class="chip">Videos</span>
+          <span class="chip">Captions</span>
+          <span class="chip">Comments</span>
+          <span class="chip">Profile photos</span>
+        </p>
 
         <h2>A photo's trip</h2>
-        <p>Here is what happens when you post a photo of the lake to your Family klk.</p>
 
         <figure class="fig trip" aria-label="A photo is locked on your phone, stored scrambled on klk's servers, and unlocked on a family member's phone.">
           <div class="station">
             <div class="mini-phone">
               <div class="photo"><div class="ridge"></div><div class="ridge near"></div></div>
             </div>
-            <p class="station-label"><strong>Your phone</strong>You see the photo.</p>
+            <p class="station-label"><strong>Your phone</strong></p>
           </div>
           <div class="hop" style="color: var(--pine)">
             <svg width="22" height="22" aria-hidden="true"><use href="#i-lock" /></svg>
             <span class="hop-line"></span>
-            <span class="hop-label">locked with the Family key</span>
+            <span class="hop-label">locked</span>
           </div>
           <div class="station">
             <div class="mini-server">
               <svg class="noise" viewBox="0 0 80 80" aria-hidden="true"><use href="#noise" /></svg>
             </div>
-            <p class="station-label"><strong>Our servers</strong>Only scrambled bytes.</p>
+            <p class="station-label"><strong>Our servers</strong></p>
           </div>
           <div class="hop" style="color: var(--pine)">
             <svg width="22" height="22" aria-hidden="true"><use href="#i-unlock" /></svg>
             <span class="hop-line"></span>
-            <span class="hop-label">unlocked with the Family key</span>
+            <span class="hop-label">unlocked</span>
           </div>
           <div class="station">
             <div class="mini-phone">
               <div class="photo"><div class="ridge"></div><div class="ridge near"></div></div>
             </div>
-            <p class="station-label"><strong>Your sister's phone</strong>She sees the photo.</p>
+            <p class="station-label"><strong>Your sister's phone</strong></p>
           </div>
         </figure>
 
-        <p>
-          Think of a lockbox that only certain keys open. Your phone puts the photo in the
-          box and locks it with the Family klk's key, then uploads the locked box. Our
-          servers keep it and pass it along to the other members' phones. Their phones
-          have the key, so they unlock it and show the photo. Everywhere in between, the
-          photo is noise: random-looking bytes that are useless without the key.
-        </p>
+        <p>In between, the photo is just noise. Only your klk's key turns it back.</p>
 
         <h2>Every klk has its own key</h2>
-        <p>
-          A klk gets its own key the moment it is created. The creator's phone makes it
-          from random numbers, and it is never stored anywhere in a form we could use.
-        </p>
-        <p>
-          To hand that key out, each person also has a <strong>personal key</strong> that
-          lives on their phone. Every member gets their own copy of the klk's key, locked
-          with their personal key, so we can deliver it to them without being able to use
-          it ourselves.
-        </p>
 
         <figure class="fig keyring" aria-label="Your phone holds the keys for Family and Cabin trip. Jo's phone holds only the Cabin trip key.">
           <div class="holder">
@@ -190,14 +203,9 @@
           </div>
         </figure>
 
-        <p>
-          If you are in two klks, your phone holds two keys. Jo, who is only in the Cabin
-          trip klk with you, holds only that one, so nothing posted in Family can be
-          opened on Jo's phone.
-        </p>
+        <p>Jo is only in Cabin trip, so nothing in Family opens on Jo's phone.</p>
 
         <h2>How someone new gets the key</h2>
-        <p>When you invite someone, klk makes a link that looks like this:</p>
 
         <figure class="fig url-fig" aria-label="An invite link. The part after the # holds the invite and a one-time key.">
           <p class="url">
@@ -206,40 +214,27 @@
           <dl class="url-legend">
             <div>
               <dt><span class="swatch token"></span>The invite</dt>
-              <dd>The app shows it to our server once, to let the person in.</dd>
+              <dd>Lets them in.</dd>
             </div>
             <div>
-              <dt><span class="swatch key"></span>A one-time key</dt>
-              <dd>Unlocks your klk's key. It never comes to us.</dd>
+              <dt><span class="swatch key"></span>The key</dt>
+              <dd>Goes from your phone to theirs. Never to us.</dd>
             </div>
           </dl>
         </figure>
 
         <p>
-          Everything after the <code>#</code> is the part of a web address that browsers
-          and apps never send to a website's server. That is a rule of how the web works,
-          not just a promise of ours. The one-time key travels from your phone, through
-          whatever app you send the link with, to theirs. Once they have joined, their
-          phone locks its own copy of the klk's key and the invite stops carrying it.
-        </p>
-        <p>
-          It is also why an unused invite deserves the care of a house key: whoever holds
-          it can get in. Each one works once and expires, and you can cancel all of them
-          from the klk's page.
+          Browsers never send the part after <code>#</code> to a server; that's how the web
+          works. Treat an unused invite like a house key.
         </p>
 
         <h2>When someone leaves</h2>
-        <p>
-          When someone leaves a klk or is removed, one of the remaining members' phones
-          makes a brand-new key and gives it to everyone still in the klk. New posts are
-          locked with the new key, which the person who left never receives.
-        </p>
 
         <figure class="fig timeline" aria-label="Before Jo leaves, posts use the first Family key and Jo can open them. After Jo leaves, posts use a new Family key and Jo cannot open them.">
           <div class="era">
             <div class="era-bar"></div>
-            <p class="era-name">Family key, first version</p>
-            <p class="era-note">Jo can still open these.</p>
+            <p class="era-name">Old key</p>
+            <p class="era-note">Jo can still see these.</p>
           </div>
           <div class="event">
             <span class="event-dot"></span>
@@ -247,53 +242,59 @@
           </div>
           <div class="era">
             <div class="era-bar"></div>
-            <p class="era-name">Family key, new version</p>
+            <p class="era-name">New key</p>
             <p class="era-note">Jo can't open these.</p>
           </div>
         </figure>
 
-        <p>
-          Encryption can't take back what someone has already seen. Posts from before
-          they left stay readable to them, the same way a photo they saved stays saved.
-        </p>
+        <p>The klk gets a new key, and Jo never receives it.</p>
 
         <h2>Your recovery passphrase</h2>
-        <p>
-          Your personal key lives in your phone's secure storage (the Keychain on iPhone,
-          the Keystore on Android). Lose the phone and you would lose the key with it,
-          and with it every klk. So when you set up klk, you choose a
-          <strong>recovery passphrase</strong>.
-        </p>
-        <p>
-          Your phone uses the passphrase to lock a copy of your personal key, and we store
-          that locked copy. On a new phone, you type the passphrase and it unlocks the
-          copy. The passphrase itself never leaves your phone.
-        </p>
+
+        <figure class="fig trip" aria-label="Your passphrase unlocks a locked copy of your keys that we store, so your new phone can open your klks.">
+          <div class="station">
+            <div class="pass-pill" aria-hidden="true"><span>••••••••</span></div>
+            <p class="station-label"><strong>Your passphrase</strong>Only you know it.</p>
+          </div>
+          <div class="hop">
+            <svg width="22" height="22" aria-hidden="true"><use href="#i-unlock" /></svg>
+            <span class="hop-line"></span>
+            <span class="hop-label">unlocks</span>
+          </div>
+          <div class="station">
+            <div class="keybox" aria-hidden="true">
+              <svg width="40" height="40"><use href="#i-lock" /></svg>
+            </div>
+            <p class="station-label"><strong>Your keys</strong>We store them locked.</p>
+          </div>
+          <div class="hop">
+            <svg width="22" height="22" aria-hidden="true"><use href="#i-key" /></svg>
+            <span class="hop-line"></span>
+            <span class="hop-label">onto</span>
+          </div>
+          <div class="station">
+            <div class="mini-phone">
+              <div class="photo"><div class="ridge"></div><div class="ridge near"></div></div>
+            </div>
+            <p class="station-label"><strong>Your new phone</strong>Everything opens.</p>
+          </div>
+        </figure>
+
         <div class="callout">
           <p>
-            <strong>This is why we can't reset it.</strong> There is no master key and no
-            back door. If there were one, we could use it to see your photos. Choose
-            something you will remember and nobody could guess; a short sentence works
-            well.
+            <strong>We can't reset it.</strong> There's no back door. If there were, we could
+            see your photos.
           </p>
         </div>
 
-        <h2>What isn't encrypted</h2>
+        <h2>What we can see</h2>
         <p>
-          Encryption hides what you share, not the fact that you shared it. To deliver
-          posts and notifications, our servers still see some things: your email and
-          display name, which klks you are in, and who posted, liked, viewed or commented
-          when. The privacy policy keeps the complete list, under
-          <a href="privacy.html#what-we-can-see">What we can still see</a>.
+          Who and when, not what: names, emails, who's in which klk, and who posted, liked
+          or commented when. <a href="privacy.html#what-we-can-see">The full list</a> is in
+          the privacy policy.
         </p>
         <p>
-          Notifications say who did something, never what they said or shared. The server
-          has nothing readable to put in them.
-        </p>
-        <p>
-          The one time we see something you posted is when someone shows it to us. If you
-          report a post, your phone sends us its caption and the key to just its photos,
-          so we can review it. Nothing else in the klk is opened.
+          If you report a post, your phone sends us just that post to review.
         </p>
 
         <!-- The technical half. Everything above, said again precisely enough to check. -->

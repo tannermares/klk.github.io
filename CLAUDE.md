@@ -77,7 +77,8 @@ These are the actual App Store submission blocker, so accuracy matters more than
 ## The encryption page
 
 `encryption.html` explains the end-to-end encryption twice: in plain words with
-illustrations for anyone, then under "Geek stuff" precisely enough for an expert to
+illustrations for anyone (picture first, a line or two of text per figure at most —
+the pictures carry it, so resist adding paragraphs), then under "Geek stuff" precisely enough for an expert to
 check (algorithms, Argon2id parameters, the key hierarchy, a sample sealed post, and
 what it does *not* protect against). Every number and claim on it comes from the app
 repo (`classes/crypto/`, `classes/klkKeys.ts`, `classes/mediaUpload.ts`,
