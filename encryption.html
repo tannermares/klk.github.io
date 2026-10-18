@@ -463,6 +463,13 @@
             member.
           </li>
           <li>
+            <strong>Forged key requests.</strong> A member whose phone is missing a klk's
+            key can ask the others for it. The request names only who is asking. Other
+            members' phones check that person is on the klk's member list and seal the
+            key to the public key on their profile, so a forged request can't send the
+            key anywhere else.
+          </li>
+          <li>
             <strong>Cut or shuffled files.</strong> secretstream chains each chunk to the
             one before it and marks the last one, so a file with chunks dropped, reordered
             or cut short won't open. The header is pushed through the stream too, so a
