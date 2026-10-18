@@ -5,8 +5,8 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 ## What this is
 
 The public web presence for **klk**, a private, invite-only photo and video app built
-around small groups called *klks*. Pages: a landing page, a privacy policy, terms of
-service, a support page (the App Store support URL), an invite page (`join.html`), and
+around small groups called *klks*. Pages: a landing page, a privacy policy,
+`encryption.html` (how the end-to-end encryption works), terms of service, a support page (the App Store support URL), an invite page (`join.html`), and
 `delete-account.html` — the account-deletion URL filed with Google Play, which checks it
 live, so it must never move or 404. The app source lives in a
 sibling repo (`../klk`) — this repo contains no app code and never should.
@@ -73,6 +73,19 @@ These are the actual App Store submission blocker, so accuracy matters more than
   carry uid, email and display name, and no decrypted content), and on-device media
   preparation that strips photo EXIF and video metadata before encryption.
 - Bump the `Last updated` date whenever the substance changes.
+
+## The encryption page
+
+`encryption.html` explains the end-to-end encryption twice: in plain words with
+illustrations for anyone, then under "Geek stuff" precisely enough for an expert to
+check (algorithms, Argon2id parameters, the key hierarchy, a sample sealed post, and
+what it does *not* protect against). Every number and claim on it comes from the app
+repo (`classes/crypto/`, `classes/klkKeys.ts`, `classes/mediaUpload.ts`,
+`functions/index.js`, `firestore.rules`), so when any of those change, so does this
+page. It links to the privacy policy's "What we can still see" rather than keeping its
+own list. Keep the "doesn't protect against" list honest: it is what makes the rest
+credible to the people who can tell. In its figures, a key or lock takes the hue of the
+klk it belongs to (Family is pine, Cabin trip is clay), and nothing else is coloured.
 
 ## Conventions
 
