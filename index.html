@@ -349,8 +349,8 @@
           <div class="section-head">
             <h2>Request access.</h2>
             <p>
-              klk is in a small private beta. Leave your email and we'll send an invite
-              when there's room.
+              klk is in a small private beta. Leave your email and we'll send you the
+              links to install it on iPhone or Android.
             </p>
           </div>
           <!-- Requests go to the app's requestAccess Cloud Function, the one request on
@@ -375,8 +375,7 @@
               <button class="btn" type="submit">Request access</button>
             </div>
             <p class="hint">
-              Use the email on your Apple ID or Google account — it's where the invite
-              goes.
+              The invite arrives in a minute or two. If it isn't there, check junk.
             </p>
             <!-- A honeypot: hidden from people, so only a bot fills it in. -->
             <div class="honeypot" aria-hidden="true">
@@ -433,7 +432,8 @@
           if (!res.ok || body.error) throw new Error(message)
           form.replaceChildren(status)
           status.className = 'form-status done'
-          status.textContent = "Thanks — we'll be in touch."
+          status.textContent =
+            'Thanks — check your email for the install links. Not there? Look in junk, or write to support@klkapp.com.'
         } catch {
           status.className = 'form-status error'
           status.textContent = message
