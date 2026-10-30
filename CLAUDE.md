@@ -6,7 +6,8 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 The public web presence for **klk**, a private, invite-only photo and video app built
 around small groups called *klks*. Pages: a landing page, a privacy policy,
-`encryption.html` (how the end-to-end encryption works), terms of service, a support page (the App Store support URL), an invite page (`join.html`), and
+`encryption.html` (how the end-to-end encryption works), terms of service, a support page (the App Store support URL), an invite page (`join.html`), `why.html` (Tanner's own
+"Why I built klk" story, edited only for spelling and grammar), and
 `delete-account.html` — the account-deletion URL filed with Google Play, which checks it
 live, so it must never move or 404. The app source lives in a
 sibling repo (`../klk`) — this repo contains no app code and never should.

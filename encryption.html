@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>How encryption works — klk</title>
+    <title>How encryption works | klk</title>
     <meta
       name="description"
       content="How klk locks your photos, videos, captions and comments on your phone so only your klk can open them, in plain words first and then in full technical detail."
@@ -11,10 +11,10 @@
     <meta name="theme-color" content="#4f7d66" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="klk" />
-    <meta property="og:title" content="How encryption works — klk" />
+    <meta property="og:title" content="How encryption works | klk" />
     <meta
       property="og:description"
-      content="How klk locks what you share on your phone so only your klk can open it — in plain words, then in full detail."
+      content="How klk locks what you share on your phone so only your klk can open it. Plain words first, then the full details."
     />
     <meta property="og:url" content="https://klkapp.com/encryption.html" />
     <meta property="og:image" content="https://klkapp.com/assets/og-image.png" />
@@ -22,13 +22,13 @@
     <meta property="og:image:height" content="1260" />
     <meta
       property="og:image:alt"
-      content="klk — a private, invite-only place for photos and video, shown with a list of klks: Family, Cabin trip, Book club."
+      content="klk, a private, invite-only place for photos and video, shown with a list of klks: Family, Cabin trip, Book club."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="How encryption works — klk" />
+    <meta name="twitter:title" content="How encryption works | klk" />
     <meta
       name="twitter:description"
-      content="How klk locks what you share on your phone so only your klk can open it — in plain words, then in full detail."
+      content="How klk locks what you share on your phone so only your klk can open it. Plain words first, then the full details."
     />
     <meta name="twitter:image" content="https://klkapp.com/assets/og-image.png" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -90,7 +90,7 @@
 
         <p class="lede">
           What you post is locked on your phone, and only your klk can unlock it. Not even
-          we can see it.
+          I can see it.
         </p>
 
         <h2>The short version</h2>
@@ -130,7 +130,7 @@
               </div>
             </div>
             <div>
-              <h3>Our servers see noise</h3>
+              <h3>klk’s servers see noise</h3>
               <p>So do Google and Cloudflare.</p>
             </div>
           </div>
@@ -163,7 +163,7 @@
             <div class="mini-server">
               <svg class="noise" viewBox="0 0 80 80" aria-hidden="true"><use href="#noise" /></svg>
             </div>
-            <p class="station-label"><strong>Our servers</strong></p>
+            <p class="station-label"><strong>klk’s servers</strong></p>
           </div>
           <div class="hop" style="color: var(--pine)">
             <svg width="22" height="22" aria-hidden="true"><use href="#i-unlock" /></svg>
@@ -218,7 +218,7 @@
             </div>
             <div>
               <dt><span class="swatch key"></span>The key</dt>
-              <dd>Goes from your phone to theirs. Never to us.</dd>
+              <dd>Goes from your phone to theirs. Never to me.</dd>
             </div>
           </dl>
         </figure>
@@ -251,7 +251,7 @@
 
         <h2>Your recovery passphrase</h2>
 
-        <figure class="fig trip" aria-label="Your passphrase unlocks a locked copy of your keys that we store, so your new phone can open your klks.">
+        <figure class="fig trip" aria-label="Your passphrase unlocks a locked copy of your keys that klk stores, so your new phone can open your klks.">
           <div class="station">
             <div class="pass-pill" aria-hidden="true"><span>••••••••</span></div>
             <p class="station-label"><strong>Your passphrase</strong>Only you know it.</p>
@@ -265,7 +265,7 @@
             <div class="keybox" aria-hidden="true">
               <svg width="40" height="40"><use href="#i-lock" /></svg>
             </div>
-            <p class="station-label"><strong>Your keys</strong>We store them locked.</p>
+            <p class="station-label"><strong>Your keys</strong>klk stores them locked.</p>
           </div>
           <div class="hop">
             <svg width="22" height="22" aria-hidden="true"><use href="#i-key" /></svg>
@@ -282,19 +282,19 @@
 
         <div class="callout">
           <p>
-            <strong>We can't reset it.</strong> There's no back door. If there were, we could
+            <strong>I can't reset it.</strong> There's no back door. If there was, I could
             see your photos.
           </p>
         </div>
 
-        <h2>What we can see</h2>
+        <h2>What I can see</h2>
         <p>
           Who and when, not what: names, emails, who's in which klk, and who posted, liked
           or commented when. <a href="privacy.html#what-we-can-see">The full list</a> is in
           the privacy policy.
         </p>
         <p>
-          If you report a post, your phone sends us just that post to review.
+          If you report a post, your phone sends me just that post to review.
         </p>
 
         <!-- The technical half. Everything above, said again precisely enough to check. -->
@@ -378,7 +378,7 @@
           <li>
             <span class="rung-name">Identity key (X25519)</span>
             <span class="rung-where">
-              The secret half lives in the Keychain or Keystore, and we store a copy
+              The secret half lives in the Keychain or Keystore, and klk stores a copy
               locked by the escrow key. The public half is on your profile, and the
               security rules stop it changing once it is set.
             </span>
@@ -414,11 +414,11 @@
           someone, plus one copy sealed to you.
         </p>
 
-        <h3>What a post looks like to us</h3>
+        <h3>What a post looks like to me</h3>
         <p>
-          This is a post as it sits in our database, abridged, with long values cut short.
-          The <span class="sealed">highlighted</span> values are ciphertext we can't open.
-          The rest is what our servers can read, and it matches the
+          This is a post as it sits in the database, abridged, with long values cut short.
+          The <span class="sealed">highlighted</span> values are ciphertext I can't open.
+          The rest is what the server can read, and it matches the
           <a href="privacy.html#what-we-can-see">privacy policy's list</a>.
         </p>
         <pre class="record"><code>{
@@ -460,7 +460,7 @@
             <strong>Planted content.</strong> There is no plaintext fallback. If a caption
             or photo on the server isn't properly sealed, the app shows nothing, and the
             security rules refuse to store it in the first place. Nobody with database
-            access, us included, can plant a caption or photo that appears to come from a
+            access, me included, can plant a caption or photo that appears to come from a
             member.
           </li>
           <li>
@@ -481,7 +481,7 @@
             asks a server function for a link, which checks that you are in the klk and
             signs a link to that one file, valid for an hour. Uploads go to a name the
             server chooses, signed for the exact number of bytes. The app only fetches from
-            our own bucket, so a forged post can't make your phone contact someone else's
+            klk’s own bucket, so a forged post can't make your phone contact someone else's
             server and reveal that you looked.
           </li>
           <li>
@@ -508,16 +508,16 @@
             has your klks.
           </li>
           <li>
-            <strong>A guessable passphrase.</strong> We store the passphrase-locked copy of
+            <strong>A guessable passphrase.</strong> klk stores the passphrase-locked copy of
             your key. Argon2id makes every guess slow and memory-hungry, but a passphrase
             from a list of common passwords could still be guessed by someone holding a
-            copy of our database.
+            copy of the database.
           </li>
           <li>
             <strong>A server altered to lie.</strong> klk doesn't yet let you compare keys
             with another member, the way Signal's safety numbers do, so your phone trusts
-            our server about who is in a klk and which public key belongs to whom. Someone
-            who took control of the server, us included, could add a member who isn't
+            klk’s server about who is in a klk and which public key belongs to whom. Someone
+            who took control of the server, me included, could add a member who isn't
             real, which everyone would see in the klk's member list. Or they could swap a
             member's public key for their own, which nobody would see. Either way, they
             would receive what is posted after that. Content already stored stays sealed.
@@ -556,7 +556,7 @@
           </li>
         </ul>
         <p>
-          Think we got something wrong, or found a flaw? Tell us at
+          Think I got something wrong, or found a flaw? Email me at
           <a href="mailto:support@klkapp.com">support@klkapp.com</a>.
         </p>
       </div>
@@ -569,6 +569,7 @@
           <p class="copyright">© 2026 Tanner Mares</p>
         </div>
         <nav>
+          <a href="why.html">Why I built klk</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="encryption.html">How encryption works</a>
           <a href="terms.html">Terms of Service</a>

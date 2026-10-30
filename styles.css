@@ -163,10 +163,19 @@ a {
 .site-head nav a {
   color: var(--ink-muted);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .site-head nav a:hover {
   color: var(--ink);
+}
+
+/* Nav links stay on one line, so tighten them on small phones to keep four in view. */
+@media (max-width: 420px) {
+  .site-head nav {
+    gap: 14px;
+    font-size: 14px;
+  }
 }
 
 /* ── Hero ───────────────────────────────────────────────────────────── */

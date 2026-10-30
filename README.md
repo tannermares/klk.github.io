@@ -10,6 +10,7 @@ The app itself lives in a separate repo (`klk`). This one is only the public web
 | File | What it is |
 | --- | --- |
 | `index.html` | Landing page — hero, illustrated app mockups, the case for klk |
+| `why.html` | Why I built klk, in Tanner's own words |
 | `privacy.html` | Privacy Policy — **required** by App Store Connect for submission |
 | `terms.html` | Terms of Service |
 | `styles.css` | The whole stylesheet, shared by all three pages |
